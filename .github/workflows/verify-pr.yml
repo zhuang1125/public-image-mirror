@@ -6,6 +6,7 @@ on:
     paths:
       - 'domain.txt'
       - 'mirror.txt'
+      - 'allows.txt'
 
 permissions:
   issues: write
@@ -21,7 +22,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Commit PR
         run: |
-          git config --global user.name "bot"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           wget -O pr.patch https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}.patch && \
             git am -3 pr.patch &&
             rm -rf pr.patch
@@ -52,9 +54,9 @@ jobs:
 
       - name: Verify allows.txt sort
         run: |
-          ./hack/verify-fmt.sh allows.txt || {
-            echo "Please run './hack/fmt.sh allows.txt'"
-            gh pr comment "${{ github.event.pull_request.number }}" --body '请运行 `./hack/fmt.sh allows.txt` 对内容进行排序'
+          ./hack/verify-image-match.sh allows.txt || {
+            echo "Please run './hack/fmt-image-match.sh allows.txt'"
+            gh pr comment "${{ github.event.pull_request.number }}" --body '请运行 `./hack/fmt-image-match.sh allows.txt` 对内容进行排序'
             exit 1
           }
 

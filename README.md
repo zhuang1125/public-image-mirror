@@ -4,12 +4,10 @@
 
 Sync: 定期同步列表里的 image tag 的同步率, 只要 tag 存在就是同步的.
 
-**!!!!!!!!!!!!!!!!!!!!!!!!通知!!!!!!!!!!!!!!!!!!!!!!!!**
+**由于近期使用量剧增, 为保证大多数的可用性**
 
-**由于近期使用量剧增, 近期进行统一限流, 以保证大多数的可用性.**
-- 如果有大量需求的[可以自己搭建服务器](https://github.com/wzshiming/crproxy/tree/master/examples/default)
-- 或者提个 Issue 商量或者添加我们的企微群 [#4183](https://github.com/DaoCloud/public-image-mirror/issues/4183)
-- 限流 [#6196](https://github.com/DaoCloud/public-image-mirror/issues/6196)
+- 白名单 & 限流 & 降级 的公开信息 [#2328](https://github.com/DaoCloud/public-image-mirror/issues/2328)
+- 如有疑问请咨询企微群 [#4183](https://github.com/DaoCloud/public-image-mirror/issues/4183)
 
 ## 背景 & 目标
 
@@ -18,8 +16,12 @@ Sync: 定期同步列表里的 image tag 的同步率, 只要 tag 存在就是�
 * 一个简洁有效的方法能够加速这些包。简洁的名称映射
 * 易于添加，添加新的包，不需要去修改代码。
 * 稳定可靠，更新实时。每天检查同步情况。
-* 此项目仅是源 Registry 的 Mirror, 所有 hash(sha256) 均和源保持一致。
-* 对于 blob(镜像层), 会缓存在第三方对象存储上, 未对内容做任何检测。
+* 此项目仅是源镜像仓库 (Registry) 的 Mirror
+  * 所有 hash(sha256) 均和源保持一致 (懒加载机制)。
+  * 由于缓存的存在, 可能存在 1 小时的延迟。
+  * 如超过 1 小时还未更新, 估计是国际带宽挂了。
+* 对于 镜像层(blob) 会缓存在第三方对象存储上
+  * 当前暂未对内容做任何检测。
 
 ## 快速开始
 
@@ -68,7 +70,7 @@ docker.m.daocloud.io/library/busybox
 就算没同步也能 **直接拉取**, 初次拉取会比已经同步过的慢.
 
 所有懒加载 **带宽**
-- 国际带宽 3 * 30 Mbps
+- 国际带宽 6 * 30 Mbps
 
 ## 定期同步列表
 
@@ -80,7 +82,9 @@ docker.m.daocloud.io/library/busybox
 
 如果想要新增, 提 PR 修改即可。例如 [PR#1](https://github.com/DaoCloud/public-image-mirror/pull/1/)， 并请在 PR 提交前排序： `./hack/fmt.sh mirror.txt`
 
-## 支持前缀替换的 Registry
+## 支持前缀替换的 Registry (不推荐)
+
+部分工具或库可能会提示未验证的错误, 如 podman, [google/go-containerregistry](https://github.com/google/go-containerregistry) 等, 推荐使用添加前缀的方式.
 
 前缀替换的 Registry 的规则, 这是人工配置的, 有需求提 Issue.
 

@@ -44,6 +44,7 @@ docker.io/calico/node-driver-registrar
 docker.io/calico/pod2daemon-flexvol
 docker.io/calico/typha
 docker.io/clickhouse/clickhouse-server
+docker.io/cloudnas/clouddrive2-unstable
 docker.io/coredns/coredns
 docker.io/csiplugin/snapshot-controller
 docker.io/curlimages/curl
@@ -55,8 +56,10 @@ docker.io/deepflowce/deepflowio-init-grafana
 docker.io/deepflowce/deepflowio-init-grafana-ds-dh
 docker.io/deepflowce/grafana
 docker.io/deepflowce/mysql
+docker.io/docker/dockerfile
 docker.io/dpage/pgadmin4
 docker.io/elastic/filebeat
+docker.io/emby/embyserver
 docker.io/envoyproxy/envoy
 docker.io/envoyproxy/gateway
 docker.io/envoyproxy/gateway-dev
@@ -67,6 +70,7 @@ docker.io/falcosecurity/falco-driver-loader
 docker.io/falcosecurity/falco-exporter
 docker.io/falcosecurity/falco-no-driver
 docker.io/falcosecurity/falcosidekick
+docker.io/floryn90/hugo
 docker.io/fluent/fluent-bit
 docker.io/fluent/fluentd
 docker.io/fortio/fortio
@@ -87,6 +91,7 @@ docker.io/goharbor/redis-photon
 docker.io/goharbor/registry-photon
 docker.io/goharbor/trivy-adapter-photon
 docker.io/grafana/grafana
+docker.io/halohub/halo
 docker.io/istio/examples-bookinfo-details-v1
 docker.io/istio/examples-bookinfo-productpage-v1
 docker.io/istio/examples-bookinfo-ratings-v1
@@ -102,6 +107,7 @@ docker.io/jaegertracing/jaeger-es-index-cleaner
 docker.io/jaegertracing/jaeger-operator
 docker.io/jaegertracing/jaeger-query
 docker.io/jboss/keycloak
+docker.io/jellyfin/jellyfin
 docker.io/jenkins/inbound-agent
 docker.io/jimmidyson/configmap-reload
 docker.io/karmada/karmada-aggregated-apiserver
@@ -211,6 +217,7 @@ docker.io/library/varnish
 docker.io/library/wordpress
 docker.io/library/yourls
 docker.io/library/zookeeper
+docker.io/linuxserver/jellyfin
 docker.io/longhornio/longhorn-engine
 docker.io/longhornio/longhorn-manager
 docker.io/longhornio/longhorn-ui
@@ -368,6 +375,7 @@ ghcr.io/megacloudcontainer/kubeaudit
 ghcr.io/mellanox/k8s-rdma-shared-dev-plugin
 ghcr.io/mellanox/network-operator-init-container
 ghcr.io/mosn/htnn-controller
+ghcr.io/mosn/htnn-dev-tools
 ghcr.io/mosn/htnn-proxy
 ghcr.io/open-telemetry/demo
 ghcr.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go
@@ -423,6 +431,8 @@ quay.io/cilium/tetragon-operator
 quay.io/coreos/etcd
 quay.io/external_storage/nfs-client-provisioner
 quay.io/grafana-operator/grafana_plugins_init
+quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-driver
+quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-operator
 quay.io/jaegertracing/jaeger-operator
 quay.io/jetstack/cert-manager-cainjector
 quay.io/jetstack/cert-manager-controller
