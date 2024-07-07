@@ -2,6 +2,7 @@ docker.elastic.co/eck/eck-operator
 docker.elastic.co/elasticsearch/elasticsearch
 docker.elastic.co/kibana/kibana
 docker.io/adoptopenjdk/openjdk11
+docker.io/adoptopenjdk/openjdk17
 docker.io/amambadev/jenkins
 docker.io/amambadev/jenkins-agent-base
 docker.io/amambadev/jenkins-agent-go
